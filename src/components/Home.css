@@ -10,8 +10,7 @@ body {
               'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url('./pencil_bg.png') no-repeat center center;
-    background-size: cover;
+  
   min-height: 100vh;
   line-height: 1.6;
 }

@@ -1,5 +1,6 @@
 .header {
-  background: url('./pencil_bg.png') no-repeat center center;
+  /* background: url('/images/pencil_bg.png') no-repeat center center; */
+  background: url('/images/pencilbg.png') no-repeat center center;
   background-size: cover;
   color: white;
   padding: 2rem 0;
