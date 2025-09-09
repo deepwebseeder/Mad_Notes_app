@@ -1,0 +1,228 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.loading_img {
+    width: 100%;
+    height: 100vh;
+    background: url('./start_bg.png') no-repeat center center;
+    background-size: cover;
+    position: relative; /* Needed for positioning the SVG absolutely */
+}
+
+.loading_svg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; /* Allows precise placement */
+    top: 30%; /* Center vertically */
+    left: 37.5%; /* Center horizontally */
+    width: 22%; /* Adjust width of the SVG container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+svg {
+    width: 100%; /* Make SVG responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+svg path {
+    fill: transparent;
+    stroke: #000;
+    stroke-width: 0.1;
+    stroke-dasharray: 10;
+    stroke-dashoffset: 30;
+    animation: textAnimation 3s ease-in-out 1 forwards;
+}
+
+.Start_tagline{
+    color: #000;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 25px;
+    margin-left: 29.5%;
+    padding-top: 20.2%;
+}
+
+/* From Uiverse.io by mrhyddenn */ 
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  background: none;
+  color: #0f1923;
+  cursor: pointer;
+  position: relative;
+  padding: 8px; 
+  margin-left: 41.3%;
+  margin-top:2% ;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 14px;
+  transition: all .15s ease;
+}
+
+.button::before,
+.button::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: calc(50% - 5px);
+  border: 1px solid #7D8082;
+  transition: all .15s ease;
+}
+
+.button::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.button::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.button:active,
+.button:focus {
+  outline: none;
+}
+
+.button:active::before,
+.button:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.button:active::before {
+  top: 3px;
+}
+
+.button:active::after {
+  bottom: 3px;
+}
+
+.button_lg {
+  position: relative;
+  display: block;
+  padding: 10px 20px;
+  color: #fff;
+  background-color: #0f1923;
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px transparent;
+}
+
+.button_lg::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 2px;
+  height: 2px;
+  background-color: #0f1923;
+}
+
+.button_lg::after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 4px;
+  height: 4px;
+  background-color: #0f1923;
+  transition: all .2s ease;
+}
+
+.button_sl {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: #ff4655;
+  transform: skew(-15deg);
+  transition: all .2s ease;
+}
+
+.button_text {
+  position: relative;
+}
+
+.button:hover {
+  color: #0f1923;
+}
+
+.button:hover .button_sl {
+  width: calc(100% + 15px);
+}
+
+.button:hover .button_lg::after {
+  background-color: #fff;
+}
+/* End of Uiverse.io by mrhyddenn */ 
+
+@keyframes textAnimation {
+    0% {
+        stroke-dashoffset: 40;
+    }
+
+    80% {
+        fill: transparent;
+    }
+
+    100% {
+        fill: #000;
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 1200px) {
+    .loading_svg {
+        width: 60%; /* Slightly larger width for smaller screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .loading_svg {
+        width: 70%; /* Increase width for smaller devices */
+    }
+}
+
+@media (max-width: 768px) {
+    .loading_svg {
+        width: 80%; /* Further increase for tablets */
+    }
+}
+
+@media (max-width: 576px) {
+    .loading_svg {
+        width: 60%; /* Almost full width for mobile devices */
+        margin-left: -70px;
+        margin-top: 100px;
+    }
+    .Start_tagline{
+       display: none;
+    }
+
+    .button{
+        margin-top: 470px;
+        right: 45px;
+    }
+
+    svg path {
+        stroke-width: 0.2; /* Increase stroke width for better visibility on small screens */
+    }
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
